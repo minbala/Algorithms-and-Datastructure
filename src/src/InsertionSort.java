@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class InsertionSort {
     static int[] insertionSortIncreasing(int[] arr){
@@ -37,7 +38,13 @@ public class InsertionSort {
 
 
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 5, 1, 34, 23, 456, 212, 56, 3, 8};
+        Scanner sc =new Scanner(System.in);
+        System.out.print("Enter the number of elements you want to sort : ");
+        int n =sc.nextInt();
+        int[] arr =new int[n];
+        for(int i= 0;i<n;i++){
+            arr[i] =sc.nextInt();
+        }
         System.out.println(Arrays.toString(insertionSortIncreasing(arr)));
         System.out.println(Arrays.toString(insertionSortDncreasing(arr)));
     }
