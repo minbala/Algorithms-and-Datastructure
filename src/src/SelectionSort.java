@@ -4,15 +4,17 @@ import java.util.Scanner;
 public class SelectionSort {
     static int[] selectionSort(int[] arr){
         if(arr.length ==0 || arr.length ==1) return arr;
-        for(int i =0;i<arr.length;i++){
-            int key=arr[i];
+        for(int i =0;i<arr.length-1;i++){
+            int min=i;
             for(int j=i+1;j<arr.length;j++){
-                if(key>arr[j]){
-                    key=arr[j];
-                    arr[j]=arr[i];
-                    arr[i]=key;
+                if(arr[min]>arr[j]){
+                    min=j;
                 }
             }
+            int key=arr[i];
+            arr[i] =arr[min];
+            arr[min]=key;
+
         }
         return arr;
     }
